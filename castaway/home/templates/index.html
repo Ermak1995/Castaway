@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,600&display=swap"
+          rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+<header>
+    <div class="headline-menu">
+        <p class="castaway">Castaway</p>
+        <div class="links-to-main-pages">
+            <a href="">Home</a>
+            <a href="">Episodes</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+        </div>
+    </div>
+</header>
+<main>
+    <section class="section-1">
+        <img class="man-in-headphones" src="{% static 'images\maninheadphones.png' %}" alt="Фото" align="left">
+        <div class="section-1-text">
+            <div class="section-1-title">
+                <p>Take your
+                    podcast to the
+                    next <span>level</span></p>
+            </div>
+            <div class="music-apps">
+                <p class="listen-on">Listen on</p>
+                <div class="music-apps-icons">
+                    <a href=""><img src="{% static 'icons\IMAGEspotify.svg' %}" alt=""></a>
+                    <a href=""><img src="{% static 'icons\IMAGEred.svg' %}" alt=""></a>
+                    <a href=""><img src="{% static 'icons\IMAGEcloud.svg' %}" alt=""></a>
+                    <a href=""><img src="{% static 'icons\IMAGEpurple.svg' %}" alt=""></a>
+                    <a href=""><img src="{% static 'icons\IMAGEradio.svg' %}" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-2">
+        <div class="episodes">
+            <div class="episodes-header">
+                <p>Latest episodes</p>
+                <button type="button">View all episodes</button>
+            </div>
+            <div class="episodes-content">
+                <div class="episodes-content-card">
+                    <img src="{% static 'images\IMAGEep3.png' %}" alt="">
+                    <div class="episodes-content-card-description">
+                        <div class="section-2-tags">
+                            <a href="">Gear</a>
+                        </div>
+                        <p class="ep-num">Episode 3</p>
+                        <h1>Should you get outboard audio gear?</h1>
+                        <p class="ep-content">Is hardware really worth it when it comes to podcasting? The answer
+                            is...it depends. Here’s our reasons on why you might want to consider picking something
+                            up.</p>
+                        <button type="button">View Episode Details</button>
+                    </div>
+                </div>
+                <div class="episodes-content-card">
+                    <img src="{% static 'images\IMAGEep2.png' %}" alt="">
+                    <div class="episodes-content-card-description">
+                        <div class="section-2-tags">
+                            <a href="">Tips & Tricks</a>
+                        </div>
+                        <p class="ep-num">Episode 2</p>
+                        <h1>Mic tricks to take you to the next level</h1>
+                        <p class="ep-content">Stop rolling with those default settings on your mic. These small tweaks
+                            will take you from sounding good to great.</p>
+                        <button type="button">View Episode Details</button>
+                    </div>
+                </div>
+
+                <div class="episodes-content-card">
+                    <img src="{% static 'images\IMAGEep1.png' %}" alt="">
+                    <div class="episodes-content-card-description">
+                        <div class="section-2-tags">
+                            <a href="">Gear</a>
+                            <!-- 							<a href="">Tips & Tricks</a>
+                                                        <a href="">Modern</a>
+                                                        <a href="">Modern</a>
+                                                        <a href="">Modern</a>
+                                                        <a href="">Modern</a>
+                                                        <a href="">Modern</a> -->
+                        </div>
+                        <p class="ep-num">Episode 1</p>
+                        <h1>The best microphone under $200</h1>
+                        <p class="ep-content">With so many microphones on the market, how are you supposed to know
+                            what’s the best? Take a look at our top picks.</p>
+                        <button type="button">View Episode Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-3">
+        <div class="section-3-content">
+            <button><img src="{% static 'icons\arrow.png' %}" alt=""></button>
+            <p class="section-3-action">Meet your host</p>
+            <p class="section-3-title">Jacob Paulaner</p>
+            <p class="section-3-description">Jacob has a background in audio engineering, and has been podcasting since
+                the early days. He’s here to help you level up your game by sharing everything he’s learned along the
+                way.</p>
+        </div>
+        <img class="section-3-container-img" src="{% static 'images\IMAGEjacob.png' %}" alt="">
+    </section>
+    <section class="section-email_form">
+        <div class="section-email_form-title">
+            <p class="title">Email Newsletter</p>
+            <p class="description">Subscribe for updates</p>
+        </div>
+        <div class="section-email_form-form">
+            <form action="" method="post">
+                <input type="text" name="name" placeholder="Name">
+                <input type="email" name="email" placeholder="Email">
+                <button>Submit</button>
+            </form>
+        </div>
+    </section>
+    <section class="comments">
+        <div class="card">
+            <div class="stars">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+            </div>
+            <p class="comment">I can’t recommend this podcast enough</p>
+            <p class="author">Betty Lacey</p>
+        </div>
+        <div class="card">
+            <div class="stars">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+            </div>
+            <p class="comment">Jacob is the best in the business</p>
+            <p class="author">Adam Driver</p>
+        </div>
+        <div class="card">
+            <div class="stars">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+            </div>
+            <p class="comment">A wealth of audio knowledge</p>
+            <p class="author">Marcus Brown</p>
+        </div>
+        <div class="card">
+            <div class="stars">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+            </div>
+            <p class="comment">Every episode is a gem!</p>
+            <p class="author">Jessica Knowl</p>
+        </div>
+        <div class="card">
+            <div class="stars">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+            </div>
+            <p class="comment">Whoa whoa, let me take some notes!</p>
+            <p class="author">Scott Adams</p>
+        </div>
+        <div class="card">
+            <div class="stars">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+                <img src="{% static 'icons\Vectorstar.png' %}" alt="">
+            </div>
+            <p class="comment">I’ve upped my game considerably since I started listening</p>
+            <p class="author">Steven Blast</p>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="socials">
+        <h1 class="castaway">Castaway</h1>
+        <div class="socials-icons">
+            <a href=""><img src="{% static 'icons\IMAGEinsta.svg' %}" alt=""></a>
+            <a href=""><img src="{% static 'icons\IMAGEtwit.svg' %}" alt=""></a>
+            <a href=""><img src="{% static 'icons\IMAGEfacebook.svg' %}" alt=""></a>
+        </div>
+    </div>
+    <div class="list-links">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Episodes</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </div>
+    <div class="other-links">
+        <ul>
+            <li><a href="">Style Guide</a></li>
+            <li><a href="">Instructions</a></li>
+            <li><a href="">Changelog</a></li>
+            <li><a href="">Credit</a></li>
+            <li><a href="">Powered by Webflow</a></li>
+            <li><a href="">Licenses</a></li>
+
+        </ul>
+    </div>
+    <div class="footer-music-apps-icons">
+        <a href=""><img src="{% static 'icons\IMAGEspotify.svg' %}" alt=""></a>
+        <a href=""><img src="{% static 'icons\IMAGEred.svg' %}" alt=""></a>
+        <a href=""><img src="{% static 'icons\IMAGEcloud.svg' %}" alt=""></a>
+        <a href=""><img src="{% static 'icons\IMAGEpurple.svg' %}" alt=""></a>
+        <a href=""><img src="{% static 'icons\IMAGEradio.svg' %}" alt=""></a>
+    </div>
+</footer>
+</body>
+</html>
+
