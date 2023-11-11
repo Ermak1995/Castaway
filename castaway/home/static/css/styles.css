@@ -55,11 +55,16 @@ button:hover {
 	align-items: center;
 }
 
-.links-to-main-pages a{
+.links-to-main-pages a.login{
+    color: #fac507;
 }
 
 .links-to-main-pages a:hover{
 	color: #118DA8;
+}
+
+.links-to-main-pages a.login:hover{
+	color: #cc068a;
 }
 
 .section-1 {
