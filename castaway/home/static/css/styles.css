@@ -28,6 +28,10 @@ a {
 button {
 	border: none; 
 	outline: none;
+	align-self: center;
+	padding: 1.5%;
+	border-radius: 6px;
+	display: inline-block;
 }
 
 button:hover {
@@ -391,4 +395,34 @@ footer div {
 
 .footer-music-apps-icons a:hover{
 	transform: scale(1.05);
+}
+
+.registration-form {
+	width: 35%;
+	height: 35vw;
+	padding: 2%;
+	top: 20%;
+	position: absolute;
+	left: 37%;	
+    font-size: 1.8vw;
+}
+
+.registration-form label {
+	margin: 2%;
+}
+
+.registration-form input {
+	padding: 2% 3%;
+	font-size: 1.5vw;
+	color: #000;
+	margin: 2%;
+}
+
+.registration-form button {
+	right: 24%;
+	bottom: 0;
+	position: absolute;
+	padding: 2%;
+	background-color: #1103a6;
+	font-size: 1.5vw;
 }
