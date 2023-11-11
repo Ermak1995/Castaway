@@ -1,28 +1,6 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,600&display=swap"
-          rel="stylesheet">
-    <title>Home</title>
-</head>
-<body>
-<header>
-    <div class="headline-menu">
-        <p class="castaway">Castaway</p>
-        <div class="links-to-main-pages">
-            <a href="">Home</a>
-            <a href="">Episodes</a>
-            <a href="">About</a>
-            <a href="">Contact</a>
-        </div>
-    </div>
-</header>
+{% block main %}
 <main>
     <section class="section-1">
         <img class="man-in-headphones" src="{% static 'images\maninheadphones.png' %}" alt="Фото" align="left">
@@ -194,42 +172,6 @@
         </div>
     </section>
 </main>
-<footer>
-    <div class="socials">
-        <h1 class="castaway">Castaway</h1>
-        <div class="socials-icons">
-            <a href=""><img src="{% static 'icons\IMAGEinsta.svg' %}" alt=""></a>
-            <a href=""><img src="{% static 'icons\IMAGEtwit.svg' %}" alt=""></a>
-            <a href=""><img src="{% static 'icons\IMAGEfacebook.svg' %}" alt=""></a>
-        </div>
-    </div>
-    <div class="list-links">
-        <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Episodes</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
-    </div>
-    <div class="other-links">
-        <ul>
-            <li><a href="">Style Guide</a></li>
-            <li><a href="">Instructions</a></li>
-            <li><a href="">Changelog</a></li>
-            <li><a href="">Credit</a></li>
-            <li><a href="">Powered by Webflow</a></li>
-            <li><a href="">Licenses</a></li>
 
-        </ul>
-    </div>
-    <div class="footer-music-apps-icons">
-        <a href=""><img src="{% static 'icons\IMAGEspotify.svg' %}" alt=""></a>
-        <a href=""><img src="{% static 'icons\IMAGEred.svg' %}" alt=""></a>
-        <a href=""><img src="{% static 'icons\IMAGEcloud.svg' %}" alt=""></a>
-        <a href=""><img src="{% static 'icons\IMAGEpurple.svg' %}" alt=""></a>
-        <a href=""><img src="{% static 'icons\IMAGEradio.svg' %}" alt=""></a>
-    </div>
-</footer>
-</body>
-</html>
 
+{% endblock %}
