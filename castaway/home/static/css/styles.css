@@ -399,11 +399,10 @@ footer div {
 
 .registration-form {
 	width: 45%;
-	height: 35vw;
 	padding: 2%;
 	top: 20%;
 	position: absolute;
-	left: 29%;	
+	left: 30%;	
     font-size: 1.8vw;
 }
 
@@ -416,23 +415,32 @@ footer div {
 	padding: 2% 3%;
 	font-size: 1.5vw;
 	color: #000;
-	margin: 2%;
-}
-
-.registration-form button {
-	right: 24%;
-	bottom: 0;
-	position: absolute;
-	padding: 2%;
-	background-color: #1103a6;
-	font-size: 1.5vw;
+	margin: 2% 0;
 }
 
 .registration-buttons {
+	margin-top: 2%;
+	padding: 1.5%;
 	display: flex;
 	justify-content: space-between;
 }
 
 .registration-buttons a{
-	color: #1103a6	;
+	color: #5ab3f2;
+}
+
+.registration-buttons a:hover{
+	color: #22ad1f;
+}
+
+
+.registration-buttons button{
+	padding: 2%;
+	bottom: 0;
+	background-color: #046ade;
+	font-size: 1.7vw;
+}
+
+.registration-buttons button:focus{
+	background-color: #22ad1f;
 }
