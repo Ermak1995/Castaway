@@ -9,7 +9,8 @@ def register(request):
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            form.save()
+            data = form.cleaned_data()
+            form.save(**data)
             redirect('index')
     else:
         form = UserRegisterForm()
