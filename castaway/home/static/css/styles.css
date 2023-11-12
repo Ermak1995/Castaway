@@ -397,10 +397,15 @@ footer div {
 	transform: scale(1.05);
 }
 
+.registration-title {
+	text-align: center;
+	margin-bottom: 10%;
+}
+
 .registration-form {
 	width: 45%;
 	padding: 2%;
-	top: 20%;
+	top: 13%;
 	position: absolute;
 	left: 30%;	
     font-size: 1.8vw;
@@ -423,6 +428,7 @@ footer div {
 	padding: 1.5%;
 	display: flex;
 	justify-content: space-between;
+	align-content: center;
 }
 
 .registration-buttons a{
