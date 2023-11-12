@@ -5,7 +5,8 @@
 	<h1 class="registration-title">Registration</h1>
     <form action="" method="post">
         {% csrf_token %}
-        <label>Username:</label>
+        {{ form.errors }}
+        <!-- <label>Username:</label>
         <input type="text" name="username" maxlength="150" autofocus required id="id_username" placeholder="Name">
 
         <label>Email address:</label>
@@ -15,8 +16,11 @@
         <input type="password" name="password1" autocomplete="new-password" required id="id_password1" placeholder="Password">
 
         <label>Password confirmation:</label>
-        <input type="password" name="password2" autocomplete="new-password" required id="id_password2" placeholder="Confirm password">
-
+        <input type="password" name="password2" autocomplete="new-password" required id="id_password2" placeholder="Confirm password"> -->
+        {% for field in form %}
+        <label> {{ field.label }} </label>
+        {{ field }}
+        {% endfor %}
         <div class="registration-buttons">
             <a href="">Already have account?</a>
             <button type="submit">Submit</button>
