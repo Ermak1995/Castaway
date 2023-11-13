@@ -455,3 +455,13 @@ footer div {
 	margin-bottom: 4%;
 	color: #f00;
 }
+
+.errorlist li{
+	margin: 2%;
+	color: #f00;
+	font-size: 1.6vw;
+}
+
+.errorlist li::before{
+	content: '*';
+}

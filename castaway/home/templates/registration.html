@@ -1,19 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load home_extras %}
 {% block content %}
 <div class="registration-form">
     <h1 class="registration-title">Registration</h1>
     <form action="" method="post">
         {% csrf_token %}
-        {% if field.errors %}
-            {{ field.errors }}
-        {% endif %}
         {% for field in form %}
         <label> {{ field.label }} </label>
         {{ field }}
         {% if field.name in form.errors %}
-            {{ field.name }}
-            {{ forms.errors.field.name }}
+            {% show_value form.errors field.name %}
         {% endif %}
         {% endfor %}
         <div class="registration-buttons">
