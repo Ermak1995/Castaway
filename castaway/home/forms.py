@@ -12,8 +12,7 @@ class UserRegisterForm(UserCreationForm):
         model = User
         widgets = {
             'username': forms.TextInput(attrs={'placeholder': 'Name'}),
-            'email': forms.TextInput(attrs={'placeholder': 'Email'}),
-
+            'email': forms.TextInput(attrs={'placeholder': 'Email', 'required':''}),
         }
         fields = ['username', 'email', 'password1', 'password2']
 

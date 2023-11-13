@@ -450,3 +450,8 @@ footer div {
 .registration-buttons button:focus{
 	background-color: #22ad1f;
 }
+
+.form-error {
+	margin-bottom: 4%;
+	color: #f00;
+}

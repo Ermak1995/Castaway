@@ -2,24 +2,19 @@
 {% load static %}
 {% block content %}
 <div class="registration-form">
-	<h1 class="registration-title">Registration</h1>
+    <h1 class="registration-title">Registration</h1>
     <form action="" method="post">
         {% csrf_token %}
-        {{ form.errors }}
-        <!-- <label>Username:</label>
-        <input type="text" name="username" maxlength="150" autofocus required id="id_username" placeholder="Name">
-
-        <label>Email address:</label>
-        <input type="email" name="email" maxlength="254" id="id_email" placeholder="Email">
-
-        <label>Password:</label>
-        <input type="password" name="password1" autocomplete="new-password" required id="id_password1" placeholder="Password">
-
-        <label>Password confirmation:</label>
-        <input type="password" name="password2" autocomplete="new-password" required id="id_password2" placeholder="Confirm password"> -->
+        {% if field.errors %}
+            {{ field.errors }}
+        {% endif %}
         {% for field in form %}
         <label> {{ field.label }} </label>
         {{ field }}
+        {% if field.name in form.errors %}
+            {{ field.name }}
+            {{ forms.errors.field.name }}
+        {% endif %}
         {% endfor %}
         <div class="registration-buttons">
             <a href="">Already have account?</a>
@@ -29,3 +24,11 @@
 </div>
 
 {% endblock %}
+
+<ul class="errorlist">
+    <li>username
+        <ul class="errorlist">
+            <li>A user with that username already exists.</li>
+        </ul>
+    </li>
+</ul>
