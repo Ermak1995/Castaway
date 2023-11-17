@@ -1,6 +1,7 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
+from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import UserRegisterForm, LoginForm
@@ -17,7 +18,6 @@ def page_404(request):
 def register(request):
     '''
     ['add_error', 'add_initial_prefix', 'add_prefix', 'as_div', 'as_p', 'as_table', 'as_ul', 'auto_id', 'base_fields', 'changed_data', 'clean', 'clean_password2', 'clean_username', 'data', 'declared_fields', 'default_renderer', 'empty_permitted', 'error_class', 'error_messages', 'errors', 'field_order', 'fields', 'files', 'full_clean', 'get_context', 'get_initial_for_field', 'has_changed', 'has_error', 'hidden_fields', 'initial', 'instance', 'is_bound', 'is_multipart', 'is_valid', 'label_suffix', 'media', 'non_field_errors', 'order_fields', 'prefix', 'render', 'renderer', 'save', 'template_name', 'template_name_div', 'template_name_label', 'template_name_p', 'template_name_table', 'template_name_ul', 'use_required_attribute', 'validate_unique', 'visible_fields']
-
     '''
     # error = ''
     if request.method == "POST":
@@ -45,12 +45,11 @@ def login_user(request):
         username = request.POST['username']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
-        print(user)
         if user is not None:
             login(request, user)
             return redirect('index')
         else:
-            return page_404(request)
+            messages.error(request, 'Invalid login details')
     else:
         form = LoginForm()
 
@@ -59,3 +58,7 @@ def login_user(request):
 
 def profile(request):
     return render(request, 'profile.html')
+
+def logout_user(request):
+    logout(request)
+    return redirect('index')

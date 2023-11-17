@@ -3,6 +3,6 @@
 {% block content %}
 
 {{ request.user.username }}
-<a href="">Logout</a>
+<a class="user-profile-link" href="{% url 'logout' %}">Logout</a>
 
 {% endblock %}
