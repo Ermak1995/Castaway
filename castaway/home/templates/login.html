@@ -4,6 +4,7 @@
 <div class="auth-form">
     <h1 class="auth-form-title">Login</h1>
     <form action="" method="post">
+        {% csrf_token %}
         {% for field in form %}
         {{ field.label }}: {{ field }}
         {% endfor %}
