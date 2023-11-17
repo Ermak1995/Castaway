@@ -2,8 +2,8 @@
 {% load static %}
 {% load home_extras %}
 {% block content %}
-<div class="registration-form">
-    <h1 class="registration-title">Registration</h1>
+<div class="auth-form">
+    <h1 class="auth-form-title">Registration</h1>
     <form action="" method="post">
         {% csrf_token %}
         {% for field in form %}
@@ -13,7 +13,7 @@
             {% show_value form.errors field.name %}
         {% endif %}
         {% endfor %}
-        <div class="registration-buttons">
+        <div class="auth-form-buttons">
             <a href="">Already have account?</a>
             <button type="submit">Submit</button>
         </div>

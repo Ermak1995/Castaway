@@ -1,11 +1,16 @@
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, LoginForm
 
 
 def index(request):
     return render(request, 'index.html')
 
+def page_404(request):
+    return HttpResponse('404')
 
 def register(request):
     '''
@@ -15,7 +20,7 @@ def register(request):
     # error = ''
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
-        if form.is_valid():    #and User.objects.filter(email=email).exists()
+        if form.is_valid():  # and User.objects.filter(email=email).exists()
             form.save()
             return redirect('index')
         else:
@@ -30,3 +35,18 @@ def register(request):
 
     }
     return render(request, 'registration.html', context=context)
+
+
+def login_user(request):
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        user = authenticate(request, form)
+        print(user)
+        if user is not None:
+            login(request, user)
+        else:
+            page_404(request)
+    else:
+        form = LoginForm()
+
+    return render(request, 'login.html', {'form': form})
