@@ -9,8 +9,10 @@ from .forms import UserRegisterForm, LoginForm
 def index(request):
     return render(request, 'index.html')
 
+
 def page_404(request):
     return HttpResponse('404')
+
 
 def register(request):
     '''
@@ -53,3 +55,7 @@ def login_user(request):
         form = LoginForm()
 
     return render(request, 'login.html', {'form': form})
+
+
+def profile(request):
+    return render(request, 'profile.html')

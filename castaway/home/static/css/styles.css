@@ -59,7 +59,7 @@ button:hover {
 	align-items: center;
 }
 
-.links-to-main-pages a.login{
+.links-to-main-pages a.profile-link{
     color: #fac507;
 }
 
@@ -67,8 +67,13 @@ button:hover {
 	color: #118DA8;
 }
 
-.links-to-main-pages a.login:hover{
+.links-to-main-pages a.profile-link:hover{
 	color: #cc068a;
+}
+
+.user-profile-link {
+	font-size: 2vw;
+	overflow: hidden;
 }
 
 .section-1 {
