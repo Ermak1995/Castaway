@@ -15,7 +15,10 @@
         {{ field.label }}: {{ field }}
         {% endfor %}
         <div class="auth-form-buttons">
-            <a href="{% url 'register' %}">Register</a>
+        	<div class="auth-form-links">
+	            <a href="{% url 'register' %}">Register</a>
+	            <a href="{% url 'index' %}">Forgot password?</a>
+            </div>
             <button type="submit">Log In</button>
         </div>
     </form>

@@ -436,11 +436,16 @@ footer div {
 	align-content: center;
 }
 
-.auth-form-buttons a{
+.auth-form-links {
+	display: flex;
+	flex-direction: column;
+}
+
+.auth-form-links a{
 	color: #5ab3f2;
 }
 
-.auth-form-buttons a:hover{
+.auth-form-links a:hover{
 	color: #22ad1f;
 }
 

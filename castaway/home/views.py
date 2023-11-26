@@ -22,7 +22,7 @@ def register(request):
     # error = ''
     if request.method == "POST":
         form = UserRegisterForm(request.POST)
-        if form.is_valid():  # and User.objects.filter(email=email).exists()
+        if form.is_valid():
             form.save()
             return redirect('index')
         else:
