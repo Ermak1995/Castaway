@@ -183,7 +183,7 @@ button:hover {
 	margin: 5% 0 7% 0;
 	font-weight: 400;
 	line-height: 1.2em;
-	font-size: 330%;
+	font-size: 4vw;
 }
 .episodes-content-card-description a {
 	padding: 1% 4%;	
@@ -195,7 +195,7 @@ button:hover {
 }
 
 .episodes-content-card-description button{
-	padding: 3.5%;
+	padding: 3.5% 1%;
 	border-radius: 6px;
 	display: inline-block;
 	background-color: #118DA8;
@@ -210,11 +210,11 @@ button:hover {
 }
 
 .ep-content {
-	max-width: 60%;
+	max-width: 100%;
 	opacity: 70%;
 	overflow: scroll;
 	max-height: 40%;
-	font-size: 110%;
+	font-size: 1.9vw;
 	margin-bottom: 12%;
 	line-height: 1.5em;
 }
