@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import UserRegisterForm, LoginForm
+from .models import Episodes, Tags
 
 
 def index(request):
@@ -59,6 +60,13 @@ def login_user(request):
 def profile(request):
     return render(request, 'profile.html')
 
+
 def logout_user(request):
     logout(request)
     return redirect('index')
+
+
+def show_episodes(request):
+    episodes = Episodes.objects.all()
+    tags = Tags.objects.all()
+    return render(request, 'episodes.html', {'episodes': episodes, 'tags': tags})

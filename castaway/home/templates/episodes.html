@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+Episodes
+<section class="section-2">
+    <div class="episodes">
+        <div class="episodes-content">
+            {% for ep in episodes %}
+            <div class="episodes-content-card">
+                <img src="{{ ep.image.url }}" alt="">
+                <div class="episodes-content-card-description">
+                    <div class="section-2-tags">
+                        {% for tag in ep.tags.all %}
+                            {{ tag.name }}
+                        {% endfor %}
+                    </div>
+                    <p class="ep-num">Episode 3</p>
+                    <h1>Should you get outboard audio gear?</h1>
+                    <p class="ep-content">Is hardware really worth it when it comes to podcasting? The answer is...it
+                        depends. Here’s our reasons on why you might want to consider picking something up.</p>
+                    <button type="button">View Episode Details</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+</section>
+{% endblock %}
