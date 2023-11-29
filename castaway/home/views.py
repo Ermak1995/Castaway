@@ -9,7 +9,8 @@ from .models import Episodes, Tags
 
 
 def index(request):
-    return render(request, 'index.html')
+    episodes = Episodes.objects.order_by('-time_create')[:3]
+    return render(request, 'index.html', {'episodes': episodes})
 
 
 def page_404(request):
@@ -75,3 +76,13 @@ def show_episodes(request):
 def episodes_detail(request, episode_id):
     ep = get_object_or_404(Episodes, pk=episode_id)
     return render(request, 'episodes_detail.html', {'ep': ep})
+
+
+def show_all_tags(request):
+    tags = Tags.objects.all()
+    return render(request, 'all_tags.html', {'tags': tags})
+
+
+def show_tags(request, tag_id):
+    episodes = Episodes.objects.filter(tags=tag_id)
+    return render(request, 'tags.html', {'episodes': episodes})

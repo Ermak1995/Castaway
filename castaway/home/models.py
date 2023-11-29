@@ -31,5 +31,8 @@ class Tags(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('show_tags', kwargs={"tag_id": self.pk})
+
     class Meta:
         verbose_name_plural = 'Tags'

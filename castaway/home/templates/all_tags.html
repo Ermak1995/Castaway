@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>All tags</h1>
+    {% for tag in tags %}
+        <a class="section-2-tags" href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
+    {% endfor %}
+{% endblock %}

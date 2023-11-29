@@ -1,12 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<section class="section-2">
-    <h1 class="section-2-header">Episodes</h1>
-    <div class="episodes">
-        <div class="episodes-content">
-            {% for ep in episodes %}
+    <a href="{% url 'show_all_tags' %}">Show all tags</a>
+        {% for ep in episodes %}
             <div class="episodes-content-card">
                 <img src="{{ ep.image.url }}" alt="">
                 <div class="episodes-content-card-description">
@@ -22,9 +18,5 @@
                     <a class="get-absolute-url" href="{{ ep.get_absolute_url }}"><button type="button">View Episode Details</button></a>
                 </div>
             </div>
-            {% endfor %}
-        </div>
-    </div>
-    </div>
-</section>
+    {% endfor %}
 {% endblock %}
