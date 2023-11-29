@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-Episodes
+
 <section class="section-2">
+    <h1 class="section-2-header">Episodes</h1>
     <div class="episodes">
         <div class="episodes-content">
             {% for ep in episodes %}
@@ -14,11 +15,12 @@ Episodes
                         <a href="{% url 'index' %}">{{ tag.name }}</a>
                         {% endfor %}
                     </div>
-                    <p class="ep-num">Episode 3</p>
-                    <h1>Should you get outboard audio gear?</h1>
+                    <p class="ep-num">Episode {{ ep.pk }}</p>
+                    <h1>{{ ep.title|capfirst }}</h1>
                     <p class="ep-content">Is hardware really worth it when it comes to podcasting? The answer is...it
                         depends. Here’s our reasons on why you might want to consider picking something up.</p>
-                    <button type="button">View Episode Details</button>
+
+                    <a class="get-absolute-url" href="{{ ep.get_absolute_url }}"><button type="button">View Episode Details</button></a>
                 </div>
             </div>
             {% endfor %}

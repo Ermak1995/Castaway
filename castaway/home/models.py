@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User, AbstractUser
 from django.db import models
+from django.urls import reverse
 
 
 class Episodes(models.Model):
@@ -16,8 +17,13 @@ class Episodes(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse('episodes_detail', kwargs={"episode_id": self.pk})
+
     class Meta:
         verbose_name_plural = 'Episodes'
+
+
 class Tags(models.Model):
     name = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50, unique=True)

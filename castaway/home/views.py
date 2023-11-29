@@ -3,7 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import UserRegisterForm, LoginForm
 from .models import Episodes, Tags
 
@@ -70,3 +70,8 @@ def show_episodes(request):
     episodes = Episodes.objects.all()
     tags = Tags.objects.all()
     return render(request, 'episodes.html', {'episodes': episodes, 'tags': tags})
+
+
+def episodes_detail(request, episode_id):
+    ep = get_object_or_404(Episodes, pk=episode_id)
+    return render(request, 'episodes_detail.html', {'ep': ep})
