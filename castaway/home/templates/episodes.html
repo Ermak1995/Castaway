@@ -11,7 +11,7 @@ Episodes
                 <div class="episodes-content-card-description">
                     <div class="section-2-tags">
                         {% for tag in ep.tags.all %}
-                            {{ tag.name }}
+                        <a href="{% url 'index' %}">{{ tag.name }}</a>
                         {% endfor %}
                     </div>
                     <p class="ep-num">Episode 3</p>
