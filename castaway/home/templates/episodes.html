@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 <section class="section-2">
     <h1 class="section-2-header">Episodes</h1>
     <div class="episodes">
@@ -15,11 +14,13 @@
                         <a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
                         {% endfor %}
                     </div>
-                    <p class="ep-num">Episode {{ ep.pk }}</p>
+                    <p class="ep-num">{{ ep.author }}</p>
                     <h1>{{ ep.title|capfirst }}</h1>
                     <p class="ep-content">{{ ep.description }}</p>
 
-                    <a class="get-absolute-url" href="{{ ep.get_absolute_url }}"><button type="button">View Episode Details</button></a>
+                    <a class="get-absolute-url" href="{{ ep.get_absolute_url }}">
+                        <button type="button">View Episode Details</button>
+                    </a>
                 </div>
             </div>
             {% endfor %}

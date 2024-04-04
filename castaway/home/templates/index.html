@@ -28,6 +28,7 @@
                 <p>Latest episodes</p>
                 <a href="{% url 'show_episodes' %}"><button type="button">View all episodes</button></a>
             </div>
+
             {% for ep in episodes %}
             <div class="episodes-content-card">
                 <img src="{{ ep.image.url }}" alt="">
@@ -37,7 +38,8 @@
                         <a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
                         {% endfor %}
                     </div>
-                    <p class="ep-num">Episode {{ ep.pk }}</p>
+
+                    <p><a class="ep-num" href="{% url 'index' %}">{{ ep.author }}</a></p>
                     <h1>{{ ep.title|capfirst }}</h1>
                     <p class="ep-content">{{ ep.description }}</p>
 
