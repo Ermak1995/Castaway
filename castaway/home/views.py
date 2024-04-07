@@ -4,13 +4,17 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
+
 from .forms import UserRegisterForm, LoginForm
 from .models import Episodes, Tags
 
 
+
 def index(request):
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
     episodes = Episodes.objects.order_by('-time_create')[:3]
-    return render(request, 'index.html', {'episodes': episodes})
+    return render(request, 'index.html', {'episodes': episodes, 'num_visits':num_visits})
 
 
 def page_404(request):
