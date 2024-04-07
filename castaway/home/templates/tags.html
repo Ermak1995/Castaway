@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="episodes-content">
+    <div class="tags-header">
+        <h1 class="tag-name">Tag: {{ tag.name }}</h1>
+        <a href="{% url 'show_all_tags' %}"><button class="show-all-tags-button">Show all tags</button></a>
+    </div>
+    {% for ep in episodes %}
+    <div class="episodes-content-card">
+        <img src="{{ ep.image.url }}" alt="">
+        <div class="episodes-content-card-description">
+            <div class="section-2-tags">
+                {% for tag in ep.tags.all %}
+                <a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
+            <p class="ep-num">{{ ep.author }}</p>
+            <h1>{{ ep.title|capfirst }}</h1>
+            <p class="ep-content">{{ ep.description }}</p>
+
+            <a class="get-absolute-url" href="{{ ep.get_absolute_url }}">
+                <button type="button">View Episode Details</button>
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

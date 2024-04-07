@@ -134,7 +134,13 @@ button:hover {
 }
 
 .section-2 {
-	padding: 5% 3%;
+	padding: 0 3% 5% 3%;
+}
+
+.section-2-header {
+	text-align: center;
+	font-size: 7vw;
+	padding: 5% 0 3% 0;
 }
 
 .episodes-header {
@@ -146,15 +152,20 @@ button:hover {
 	margin-bottom: 3%;
 }
 
+.episodes-header a {
+	width: 27%;
+	display: flex;
+}
+
 .episodes-header button{
 	align-self: center;
-	padding: 1.5%;
+	padding: 6% 1.5%;
 	border-radius: 6px;
 	display: inline-block;
 	background-color: #118DA8;
-	width: 25%;
+	width: 100%;
 	text-align: center;
-	font-size: 40%;
+	font-size: 2.6vw;
 }
 
 .episodes-content {
@@ -186,16 +197,12 @@ button:hover {
 	font-size: 4vw;
 }
 .episodes-content-card-description a {
-	padding: 1% 4%;	
 	display: inline-block;
 	text-align: center;
 	border-radius: 6px;
-	width: auto;
-	background-color: #191919;
 }
 
 .episodes-content-card-description button{
-	padding: 3.5% 1%;
 	border-radius: 6px;
 	display: inline-block;
 	background-color: #118DA8;
@@ -209,6 +216,10 @@ button:hover {
 	font-size: 1.3em;
 }
 
+.ep-num:hover {
+	transform: scale(0.9);
+}
+
 .ep-content {
 	max-width: 100%;
 	opacity: 70%;
@@ -217,6 +228,20 @@ button:hover {
 	font-size: 1.9vw;
 	margin-bottom: 12%;
 	line-height: 1.5em;
+}
+
+.get-absolute-url {
+	width: 50%;
+}
+
+.get-absolute-url:hover {
+	background-color: inherit;
+}
+
+
+.get-absolute-url button{
+	padding: 6% 1.5%;
+	width: 100%;
 }
 
 .section-2-tags {
@@ -232,7 +257,9 @@ button:hover {
 }
 
 .section-2-tags a {
-	margin: 0
+	margin: 0;
+	padding: 1.5% 4%;
+	background-color: #191919;
 }
 
 
@@ -441,23 +468,23 @@ footer div {
 	flex-direction: column;
 }
 
-.auth-form-links a{
+.auth-form-links a {
 	color: #5ab3f2;
 }
 
-.auth-form-links a:hover{
+.auth-form-links a:hover {
 	color: #22ad1f;
 }
 
 
-.auth-form-buttons button{
+.auth-form-buttons button {
 	padding: 2%;
 	bottom: 0;
 	background-color: #046ade;
 	font-size: 1.7vw;
 }
 
-.auth-form-buttons button:focus{
+.auth-form-buttons button:focus {
 	background-color: #22ad1f;
 }
 
@@ -466,13 +493,38 @@ footer div {
 	color: #f00;
 }
 
-.errorlist li{
+.errorlist li {
 	margin: 2%;
 	color: #f00;
 	font-size: 1.6vw;
 }
 
-.errorlist li::before{
+.errorlist li::before {
 	content: '*';
 }
 
+.tags-header {
+	padding: 2%;	
+	text-align: center;
+	position: relative;
+}
+
+.show-all-tags-button {
+	border-radius: 6px;
+	display: inline-block;
+	background-color: #118DA8;
+	width: 15%;
+	text-align: center;
+	font-size: 1.7vw;
+	position: absolute;
+	top: 34%;
+	right: 2%;
+}
+
+.tag-name {
+	letter-spacing: 0.1em;
+	display: inline-block;	
+	margin: 3%;	
+	text-align: center;
+	font-size: 4vw;	
+}

@@ -3,12 +3,18 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
+
 from .forms import UserRegisterForm, LoginForm
+from .models import Episodes, Tags
+
 
 
 def index(request):
-    return render(request, 'index.html')
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+    episodes = Episodes.objects.order_by('-time_create')[:3]
+    return render(request, 'index.html', {'episodes': episodes, 'num_visits':num_visits})
 
 
 def page_404(request):
@@ -59,6 +65,29 @@ def login_user(request):
 def profile(request):
     return render(request, 'profile.html')
 
+
 def logout_user(request):
     logout(request)
     return redirect('index')
+
+
+def show_episodes(request):
+    episodes = Episodes.objects.all()
+    tags = Tags.objects.all()
+    return render(request, 'episodes.html', {'episodes': episodes, 'tags': tags})
+
+
+def episodes_detail(request, episode_id):
+    ep = get_object_or_404(Episodes, pk=episode_id)
+    return render(request, 'episodes_detail.html', {'ep': ep})
+
+
+def show_all_tags(request):
+    tags = Tags.objects.all()
+    return render(request, 'all_tags.html', {'tags': tags})
+
+
+def show_tags(request, tag_id):
+    episodes = Episodes.objects.filter(tags=tag_id)
+    tag = Tags.objects.get(id=tag_id)
+    return render(request, 'tags.html', {'episodes': episodes, 'tag': tag})
