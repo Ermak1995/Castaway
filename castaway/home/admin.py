@@ -6,4 +6,4 @@ admin.site.register(Tags)
 
 @admin.register(Episodes)
 class AuthorAdmin(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {"slug": ["title"]}  # автоматическое создание slugа

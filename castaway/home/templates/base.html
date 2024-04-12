@@ -16,8 +16,8 @@
     <div class="headline-menu">
         <a href="{% url 'index' %}" class="castaway">Castaway</a>
         <div class="links-to-main-pages">
-            <a href="">Home</a>
-            <a href="">Episodes</a>
+            <a href="{% url 'index' %}">Home</a>
+            <a href="{% url 'show_episodes' %}">Episodes</a>
             <a href="">About</a>
             <a href="">Contact</a>
             {% if request.user.is_authenticated %}

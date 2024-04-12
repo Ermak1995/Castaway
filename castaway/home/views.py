@@ -87,7 +87,7 @@ def show_all_tags(request):
     return render(request, 'all_tags.html', {'tags': tags})
 
 
-def show_tags(request, tag_id):
-    episodes = Episodes.objects.filter(tags=tag_id)
-    tag = Tags.objects.get(id=tag_id)
+def show_tags(request, tag_slug):
+    tag = Tags.objects.get(slug=tag_slug)
+    episodes = Episodes.objects.filter(tags__in=[tag])
     return render(request, 'tags.html', {'episodes': episodes, 'tag': tag})
