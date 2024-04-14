@@ -135,6 +135,7 @@ button:hover {
 
 .section-2 {
 	padding: 0 3% 5% 3%;
+	position: relative;
 }
 
 .section-2-header {
@@ -175,6 +176,9 @@ button:hover {
 }
 
 .episodes-content-card {
+	width: 100%;
+	height: auto;
+	max-height: 45em;
 	padding: 5%;
 	display: flex;
 	background-color: #000;
@@ -183,11 +187,16 @@ button:hover {
 }
 
 .episodes-content-card img {
+	width: 500%;
+	height: auto;
+	max-height: 45em;
 	margin-right: 4%;
+
 }
 
 .episodes-content-card-description {
 	padding: 2% 0;
+	max-width: 60%;
 }
 
 .episodes-content-card-description h1 {
@@ -224,10 +233,14 @@ button:hover {
 	max-width: 100%;
 	opacity: 70%;
 	overflow: scroll;
-	max-height: 40%;
+	max-height: 33%;
 	font-size: 1.9vw;
 	margin-bottom: 12%;
 	line-height: 1.5em;
+}
+
+.ep-content::after{
+	content: "...";
 }
 
 .get-absolute-url {

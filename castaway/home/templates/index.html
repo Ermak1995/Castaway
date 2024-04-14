@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <main>
-    <p>{{ num_visits }}</p>
+<!--    <p>{{ num_visits }}</p>-->
     <section class="section-1">
         <img class="man-in-headphones" src="{% static 'images\maninheadphones.png' %}" alt="Фото" align="left">
         <div class="section-1-text">
@@ -24,7 +24,6 @@
         </div>
     </section>
     <section class="section-2">
-        <div class="episodes">
             <div class="episodes-header">
                 <p>Latest episodes</p>
                 <a href="{% url 'show_episodes' %}"><button type="button">View all episodes</button></a>
@@ -32,7 +31,6 @@
 
             {% include 'list_episodes.html' %}
 
-        </div>
     </section>
     <section class="section-3">
         <div class="section-3-content">
