@@ -1,0 +1,22 @@
+{% for ep in episodes %}
+<div class="episodes-content-card">
+    <img src="{{ ep.image.url }}" alt="">
+    <div class="episodes-content-card-description">
+        <div class="section-2-tags">
+            {% for tag in ep.tags.all %}
+            <a href="{{ tag.get_absolute_url }}">{{ tag.name }}</a>
+            {% endfor %}
+        </div>
+
+        <a class="ep-num" href="{% url 'index' %}">{{ ep.author }}</a>
+        <h1>{{ ep.title|capfirst }}</h1>
+        <p class="ep-content">{{ ep.description }}</p>
+
+        <a class="get-absolute-url" href="{{ ep.get_absolute_url }}">
+            <button type="button">View Episode Details</button>
+        </a>
+    </div>
+</div>
+{% endfor %}
+</body>
+</html>

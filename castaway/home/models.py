@@ -50,6 +50,7 @@ class Tags(models.Model):
     class Meta:
         verbose_name_plural = 'Tags'
 
+
 from home.models import Tags
 from json import loads
 

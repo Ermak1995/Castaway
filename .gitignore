@@ -1,3 +1,6 @@
 /venv
 /.idea
 */__pycache__/*
+create_episodes_dict.py
+text.json
+text.txt
