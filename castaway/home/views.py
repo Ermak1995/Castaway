@@ -4,17 +4,26 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, get_object_or_404
+from django.core.paginator import Paginator
 
 from .forms import UserRegisterForm, LoginForm
 from .models import Episodes, Tags
-
 
 
 def index(request):
     num_visits = request.session.get('num_visits', 0)
     request.session['num_visits'] = num_visits + 1
     episodes = Episodes.objects.order_by('-time_create')[:3]
-    return render(request, 'index.html', {'episodes': episodes, 'num_visits':num_visits})
+    return render(request, 'index.html', {'episodes': episodes, 'num_visits': num_visits})
+
+
+def show_episodes(request):
+    episodes = Episodes.objects.all()
+    paginator = Paginator(episodes, 10)
+
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'episodes.html', {'episodes': episodes, 'page_obj':page_obj})
 
 
 def page_404(request):
@@ -69,12 +78,6 @@ def profile(request):
 def logout_user(request):
     logout(request)
     return redirect('index')
-
-
-def show_episodes(request):
-    episodes = Episodes.objects.all()
-    tags = Tags.objects.all()
-    return render(request, 'episodes.html', {'episodes': episodes, 'tags': tags})
 
 
 def episodes_detail(request, episode_id):
