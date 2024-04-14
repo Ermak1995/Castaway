@@ -30,6 +30,7 @@ class Episodes(models.Model):
 
     class Meta:
         verbose_name_plural = 'Episodes'
+        ordering = ["-time_create"]
 
 
 class Tags(models.Model):
@@ -51,11 +52,7 @@ class Tags(models.Model):
         verbose_name_plural = 'Tags'
 
 
-from home.models import Tags
-from json import loads
 
-with open(r"D:\Castaway\text.json") as file:
-    l = loads(file.read())
 
 
 
